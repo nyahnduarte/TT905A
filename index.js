@@ -138,7 +138,7 @@ app.post('/database',
         
         delete Artista["_id"];
 
-        pokedex.insertOne(Artista);        
+        spotify.insertOne(Artista);        
         res.send("criar um Artista.");
     }
 );
@@ -154,7 +154,7 @@ app.put('/database/:id',
 
         const num_spotify = await spotify.countDocuments({_id : mongodb.ObjectID(id)});
 
-        if (num_pokedex !== 1) {
+        if (num_spotify !== 1) {
             res.send('Ocorreu um erro por conta do número de mensagens');
             return;
         }
